@@ -40,10 +40,11 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.30114943",
-    "settings.editor.selected.configurable": "application.passwordSafe"
+    "settings.editor.selected.configurable": "application.passwordSafe",
+    "spring.configuration.checksum": "e368b9938746fa090d6afd3628355133"
   }
 }]]></component>
   <component name="RunManager">
@@ -146,6 +147,7 @@
       <workItem from="1669633625391" duration="322000" />
       <workItem from="1669634030717" duration="578000" />
       <workItem from="1669634653261" duration="3000" />
+      <workItem from="1669637180489" duration="1388000" />
     </task>
     <servers />
   </component>
