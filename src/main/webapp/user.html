@@ -107,26 +107,27 @@
             </el-table-column>
 
             <el-table-column
-                    prop="brandName"
-                    label="品牌名称"
+                    prop="id"
+                    label="id"
                     align="center"
             >
             </el-table-column>
             <el-table-column
-                    prop="companyName"
-                    label="企业名称"
+                    prop="username"
+                    label="username"
                     align="center"
             >
             </el-table-column>
             <el-table-column
-                    prop="ordered"
+                    prop="password"
+                    label="password"
                     align="center"
-                    label="排序">
+            >
             </el-table-column>
             <el-table-column
-                    prop="status"
+                    prop="tel"
                     align="center"
-                    label="当前状态">
+                    label="tel">
             </el-table-column>
 
             <el-table-column
@@ -160,10 +161,30 @@
 <script src="js/vue.js"></script>
 <script src="element-ui/lib/index.js"></script>
 <link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css">
+<script src="js/axios-0.18.0.js"></script>
+
 
 <script>
+
     new Vue({
         el: "#app",
+
+
+
+
+        mounted(){
+
+            var _this = this;
+
+            axios({
+                method:"get",
+                url:"http://localhost:8080/demo1_war_exploded/Servlet1"
+            }).then(
+                function (response){
+                    _this.tableData = response.data;
+                }
+            )
+        },
         methods: {
             tableRowClassName({row, rowIndex}) {
                 if (rowIndex === 1) {
@@ -206,37 +227,35 @@
 
                 // 品牌模型数据
                 brand: {
-                    status: '',
-                    brandName: '',
-                    companyName: '',
-                    id:"",
-                    ordered:"",
-                    description:""
+                    id: "",
+                    username: "",
+                    password: "",
+                    tel:"",
                 },
                 // 复选框选中数据集合
                 multipleSelection: [],
                 // 表格数据
                 tableData: [{
-                    brandName: '华为',
-                    companyName: '华为科技有限公司',
-                    ordered: '100',
-                    status: "1"
-                }, {
-                    brandName: '华为',
-                    companyName: '华为科技有限公司',
-                    ordered: '100',
-                    status: "1"
-                }, {
-                    brandName: '华为',
-                    companyName: '华为科技有限公司',
-                    ordered: '100',
-                    status: "1"
-                }, {
-                    brandName: '华为',
-                    companyName: '华为科技有限公司',
-                    ordered: '100',
-                    status: "1"
-                }]
+                    id: '华为',
+                    username: '华为科技有限公司',
+                    passowrd: '100',
+                    tel: "1"
+                },{
+                    id: '华为',
+                    username: '华为科技有限公司',
+                    passowrd: '100',
+                    tel: "1"
+                },{
+                    id: '华为',
+                    username: '华为科技有限公司',
+                    passowrd: '100',
+                    tel: "1"
+                },{
+                    id: '华为',
+                    username: '华为科技有限公司',
+                    passowrd: '100',
+                    tel: "1"
+                }, ]
             }
         }
     })
